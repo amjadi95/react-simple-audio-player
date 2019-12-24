@@ -1,0 +1,157 @@
+.fx {
+  display: flex !important;
+}
+
+.fx-cc {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.fxdc {
+  flex-direction: column;
+}
+
+.fxdr {
+  flex-direction: row;
+}
+
+.fxdr-s {
+  flex-direction: row;
+}
+
+.fxdr-m {
+  flex-direction: row;
+}
+
+.fxdr-l {
+  flex-direction: row;
+}
+
+.fxdrerow {
+  flex-direction: row-reverse;
+}
+
+.fjcc {
+  justify-content: center;
+}
+
+.fjcsb {
+  justify-content: space-between;
+}
+
+.fjcfs {
+  justify-content: flex-start;
+}
+
+.fjcfe {
+  justify-content: flex-end;
+}
+
+.faibl {
+  align-items: baseline;
+}
+
+.faic {
+  align-items: center;
+}
+
+.faifs {
+  align-items: flex-start;
+}
+
+.fxww {
+  flex-wrap: wrap;
+}
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 0 10px 10px 10px;
+}
+.audio-length {
+  margin-bottom: 5px;
+}
+.progres-bar-container {
+  width: 100%;
+  height: 30px;
+}
+
+.progres-bar {
+  width: 100%;
+  height: 20%;
+  background-color: #d7d7d7;
+  position: relative;
+  border-radius: 5px;
+}
+.value {
+  background-color: #ffa50085;
+  position: absolute;
+  border-radius: 5px;
+  width: 0;
+  left: 0;
+  transition: width;
+  height: 100%;
+}
+.seeker-tomb {
+  width: 10px;
+  height: 10px;
+  background-color: #e9a830;
+  box-shadow: 0px 0px 1px 1px #c88100;
+  position: absolute;
+  right: -5px;
+  border-radius: 50%;
+}
+.time {
+  padding: 2px 10px;
+}
+.time span {
+  font-size: 12px;
+}
+.mini-name {
+  max-height: 30px;
+  overflow: hidden;
+}
+
+.head {
+  width: 100%;
+  height: 90px;
+  background-color: #ffc107;
+}
+.header {
+  background-color: #e6ac01;
+  height: 40px;
+  padding: 0 10px;
+}
+.header h5 {
+  margin: 0px !important;
+  font-style: italic !important;
+}
+.search-box {
+  border: 1px solid #e6ac01;
+  width: 180px;
+  height: 30px !important;
+  overflow: hidden;
+  padding: 0;
+  margin: 5px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px 1px #3838381f;
+}
+
+.search-input {
+  border: none;
+  height: 100%;
+  padding: 8px;
+  width: 80%;
+  outline: none;
+  font-size: 12px;
+}
+.search-button {
+  border: none;
+  height: 108%;
+  width: 21%;
+  padding: 0 !important;
+  border-left: 1px solid #c6c6c6;
+  font-size: 9px;
+}
