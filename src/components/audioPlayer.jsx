@@ -1,66 +1,50 @@
 import React, { Component } from "react";
-import soundfile from "./music.mp3";
 import ProgressBar from "./progressBar.jsx";
 
 class AudioPlayer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      seekerValue: "0%",
-      isPlaying: false
-    };
-    this.audio = new Audio(soundfile);
   }
-  componentDidMount() {
-    // this.audio.src =
-    //   "http://dl.musiclove.ir/remix-tollani/Shahin-Taha-Adine-103-2019.mp3";
-    this.audio.ontimeupdate = this.onSeekerUpdate;
-  }
-  onChangeSeeker = (event, progressbar) => {
-    this.audio.currentTime = parseInt(
-      (event.nativeEvent.offsetX / progressbar.offsetWidth) *
-        this.audio.duration
-    );
-  };
-  onSeekerUpdate = () => {
-    let seekerLength =
-      this.audio.currentTime * (100 / this.audio.duration) + "%";
-    this.setState({ seekerValue: seekerLength });
-  };
-  play = playing => {
-    if (playing) {
-      this.audio.play();
-    } else {
-      this.audio.pause();
-    }
-    this.setState({ isPlaying: playing });
-  };
-  pause = () => {
-    //this.setState({ isplay: false });
+  componentDidMount() {}
 
-    this.audio.pause();
-  };
   render() {
-    let isPlaying = this.state.isPlaying;
+    let isPlaying = false;
+    let title = "",
+      artist = "",
+      coverUrl = "";
+    let progress = null;
+    if (this.props.progressbar) {
+      progress = this.props.progressbar;
+    }
+    if (this.props.songInfo) {
+      title = this.props.songInfo.title;
+      artist = this.props.songInfo.artist;
+      coverUrl = this.props.songInfo.coverUrl;
+    }
+    if (this.props.isPlaying) {
+      isPlaying = this.props.isPlaying;
+    }
+
     return (
       <div className="audio-player">
         <ProgressBar
-          data={{
-            currentTime: this.audio.currentTime,
-            endTime: this.audio.duration ? this.audio.duration : 0,
-            seekerLength: this.state.seekerValue
-          }}
-          onChangeSeeker={this.onChangeSeeker}
+          data={progress}
+          onChangeSeeker={this.props.onChangeSeeker}
         ></ProgressBar>
         <div className="audio-controller fx fxdr fjcsb">
-          <div className="mini-name  p-1 ">
-            mini name kjashdjas kjashdjas kjashdjaskjashdja skjashdjask
-            jashdjaskjashdjaskjas hdjaskjash djaskjashdjaskjashdjas
+          <div className="mini-song-info fx fxdr ">
+            <div className="mini-song-cover fx-cc ">
+              <img src={coverUrl} alt="" width="100%" height="100%" />
+            </div>
+            <div className="mini-song-name fx fxdc fjcfs">
+              <div className="mini-song-title"> {title}</div>
+              <div className="mini-song-artist"> {artist}</div>
+            </div>
           </div>
           <button
-            className="btn btn-warning"
+            className="btn  btn-warning fx-cc"
             onClick={() => {
-              this.play(!isPlaying);
+              this.props.onPlay(!isPlaying);
             }}
           >
             {isPlaying ? "pause" : "play"}
