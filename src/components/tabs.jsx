@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import Artist from "./artist";
+import Album from "./album";
+import Song from "./song";
+import { Artists } from "./musicURLs";
 class Tabs extends Component {
   constructor(props) {
     super(props);
@@ -40,38 +44,48 @@ class Tabs extends Component {
         ></div>
         <div
           id="tab-content2"
-          className="artists-tab tab-content fx fxdc faifs"
+          className="artists-tab tab-content fx fxdr fxww fjcsb "
           style={windowWidth}
-        ></div>
+        >
+          <div className="tab-contetnt-wrapper fx fxdr fxww fjcsb w-100">
+            {this.props.artistsList.map(artist => (
+              <Artist
+                data={artist}
+                key={artist.id}
+                onArtistMusicsPlay={this.props.onArtistMusicsPlay}
+              ></Artist>
+            ))}
+          </div>
+        </div>
         <div
           id="tab-content3"
           className="albums-tab tab-content fx fxdc faifs"
           style={windowWidth}
-        ></div>
+        >
+          <div className="tab-contetnt-wrapper fx fxdr fxww fjcsb w-100">
+            {this.props.albumsList.map(album => (
+              <Album
+                data={album}
+                key={album.id}
+                onAlbumMusicsPlay={this.props.onAlbumMusicsPlay}
+              ></Album>
+            ))}
+          </div>
+        </div>
         <div
           id="tab-content4"
           className="songs-tab tab-content fx fxdc faifs"
           style={windowWidth}
         >
-          {this.props.musicsList.map(obj => (
-            <div
-              className=" songs fx fxdr  w-100"
-              key={obj.title}
-              onClick={() => {
-                this.props.onSelectSong(obj.title);
-              }}
-            >
-              <div className="song-cover fx-cc ">
-                {obj.coverUrl != "" && (
-                  <img src={obj.coverUrl} alt="" width="100%" height="100%" />
-                )}
-              </div>
-              <div className="song-name fx fxdc fjcfs">
-                <div className="song-title"> {obj.title}</div>
-                <div className="song-artist"> {obj.artist}</div>
-              </div>
-            </div>
-          ))}
+          <div className="tab-contetnt-wrapper fx fxdr fxww fjcsb w-100">
+            {this.props.musicsList.map(song => (
+              <Song
+                key={song.title}
+                data={song}
+                onSelectSong={this.props.onSelectSong}
+              ></Song>
+            ))}
+          </div>
         </div>
       </div>
     );

@@ -83,7 +83,7 @@ body {
   width: 100%;
   height: 15%;
   position: relative;
-  background-color: #f1f1f1;
+  background-color: #f1f1f17a;
   padding: 0 10px 10px 10px;
 }
 .head {
@@ -197,10 +197,13 @@ button.tab-item:focus::after {
   height: 3px;
   background-color: white;
 }
-.audio-player button {
-  height: 35px;
-  padding: 3px 8px !important;
-  font-size: 12px;
+.audio-player button,
+.list-play-button {
+  width: 40px;
+  height: 40px;
+  padding: 3px !important;
+  font-size: 12px !important;
+  border-radius: 50% !important;
 }
 .songs {
   margin: 3px 0;
@@ -247,8 +250,13 @@ button.tab-item:focus::after {
   transition: 0.6s;
 }
 .tab-content {
-  padding: 0 10px;
+  padding: 0px 5px;
   overflow-y: scroll;
+  background-color: #efefef;
+}
+.tab-contetnt-wrapper {
+  height: fit-content;
+  padding: 10px 0px;
 }
 .tab-content::-webkit-scrollbar {
   padding-right: 2px;
@@ -265,7 +273,90 @@ button.tab-item:focus::after {
   background: #818181;
   border-radius: 2px;
 }
-@media (max-width: 360px) {
+
+.artist-album {
+  width: 20%;
+  height: 220px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 5px;
+  padding-top: 1px;
+  box-shadow: 0px 0px 6px 2px #cacaca;
+  position: relative;
+}
+.artist-album-cover {
+  background-image: url(http://uupload.ir/files/15ws_cover.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 98%;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 3px 3px 0px 0px;
+  position: relative;
+}
+.artist-album-cover img {
+  position: relative;
+}
+.artist-album-name {
+  width: 100%;
+  height: 40px;
+  padding: 3px 8px;
+
+  position: relative;
+}
+.artist-album-name span {
+  overflow: hidden;
+}
+.artist-album button {
+  position: absolute;
+  bottom: 5px;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  font-size: 10px !important;
+}
+
+.albums-tab .artist-album-name {
+  height: 50px;
+}
+.artist-album-name span:nth-child(1) {
+  height: 100%;
+}
+.albums-tab .artist-album-name span:nth-child(2) {
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+}
+
+@media (min-width: 1024px) {
+  .artist-album-cover {
+    height: 160px;
+  }
+}
+@media (max-width: 1024px) {
+  .artist-album {
+    height: 170px;
+  }
+}
+@media (max-width: 768px) {
+  .artist-album {
+    width: 30%;
+    height: 140px;
+  }
+  .artists-tab .artist-album {
+    height: 130px !important;
+  }
+}
+@media (max-width: 414px) {
+  .artist-album {
+    width: 190px;
+    height: 100px;
+  }
+  .albums-tab .artist-album {
+    height: 120px !important;
+  }
+}
+
+@media (max-width: 375px) {
   .mini-song-title {
     font-size: 14px;
   }
@@ -276,5 +367,13 @@ button.tab-item:focus::after {
     width: 35px;
     height: 35px;
     margin-right: 8px;
+  }
+  .artist-album {
+    width: 170px;
+  }
+}
+@media (max-width: 320px) {
+  .artist-album {
+    width: 140px;
   }
 }

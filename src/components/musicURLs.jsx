@@ -88,7 +88,8 @@ export const LocalMusics = [
 export const Artists = [
   {
     id: 1,
-    artist: "Ebi",
+    title: "Ebi",
+    coverUrl: "http://uupload.ir/files/qhb8_cover.jpg",
     list: [
       {
         title: "Raz Hamishegi Shodan",
@@ -115,7 +116,8 @@ export const Artists = [
   },
   {
     id: 2,
-    artist: "Armik",
+    title: "Armik",
+    coverUrl: "http://uupload.ir/files/hjop_cover.jpg",
     list: [
       {
         title: "07-Fire-Dance",
@@ -143,7 +145,8 @@ export const Artists = [
   },
   {
     id: 3,
-    artist: "Julio Iglasias",
+    title: "Julio Iglasias",
+    coverUrl: "http://uupload.ir/files/ivj0_cover.jpg",
     list: [
       {
         title: "Amor",
@@ -170,7 +173,8 @@ export const Artists = [
   },
   {
     id: 4,
-    artist: "Reamon",
+    title: "Reamon",
+    coverUrl: "",
     list: [
       {
         title: "ItsOverNow",
@@ -199,7 +203,8 @@ export const Artists = [
 export const Albums = [
   {
     id: 1,
-    album: "Shabzade",
+    title: "Shabzade",
+    coverUrl: "http://uupload.ir/files/qhb8_cover.jpg",
     artist: "Ebi",
     list: [
       {
@@ -227,8 +232,9 @@ export const Albums = [
   },
   {
     id: 2,
-    album: "Malaga",
+    title: "Malaga",
     artist: "Armik",
+    coverUrl: "http://uupload.ir/files/hjop_cover.jpg",
     list: [
       {
         title: "07-Fire-Dance",
@@ -256,8 +262,9 @@ export const Albums = [
   },
   {
     id: 3,
-    album: "Mylife",
+    title: "Mylife",
     artist: "Julio Iglasias",
+    coverUrl: "http://uupload.ir/files/ivj0_cover.jpg",
     list: [
       {
         title: "Amor",
@@ -270,8 +277,9 @@ export const Albums = [
   },
   {
     id: 4,
-    album: "romantic",
+    title: "romantic",
     artist: "Julio Iglasias",
+    coverUrl: "http://uupload.ir/files/ivj0_cover.jpg",
     list: [
       {
         title: "Carelesswhisper",
@@ -284,8 +292,9 @@ export const Albums = [
   },
   {
     id: 5,
-    album: "unkown",
+    title: "unkown",
     artist: "Julio Iglasias",
+    coverUrl: "http://uupload.ir/files/ivj0_cover.jpg",
     list: [
       {
         title: "Nostalgie",
@@ -298,8 +307,9 @@ export const Albums = [
   },
   {
     id: 6,
-    album: "wish",
+    title: "wish",
     artist: "Reamon",
+    coverUrl: "",
     list: [
       {
         title: "Sometimes",
@@ -312,8 +322,9 @@ export const Albums = [
   },
   {
     id: 7,
-    album: "unknown",
+    title: "unknown",
     artist: "Reamon",
+    coverUrl: "",
     list: [
       {
         title: "ItsOverNow",

@@ -49,7 +49,14 @@ class ProgressBar extends Component {
         >
           <div className="progres-bar">
             <div className="value fx-cc" style={seekerValueStyle}>
-              {showSeekerTomb && <div className="seeker-tomb"></div>}
+              {showSeekerTomb && (
+                <div
+                  className="seeker-tomb"
+                  onClick={() => {
+                    console.log("tomb clicked");
+                  }}
+                ></div>
+              )}
             </div>
           </div>
         </div>
