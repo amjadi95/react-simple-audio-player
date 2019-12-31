@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+import DotOoption from "./dotOption";
 class Artists extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,15 @@ class Artists extends Component {
         </div>
         <div className="artist-album-name fx faic">
           <span className="w-100 h-100">{artist.title}</span>
+          <DotOoption
+            onShowSongsOption={this.props.onShowSongsOption}
+            data={{
+              type: "artist",
+              artist: artist.title,
+              albums: artist.albums,
+              track: ""
+            }}
+          ></DotOoption>
         </div>
       </div>
     );

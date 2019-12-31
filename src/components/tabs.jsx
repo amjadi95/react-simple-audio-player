@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Artist from "./artist";
 import Album from "./album";
 import Song from "./song";
+
 import { Artists } from "./musicURLs";
+
 class Tabs extends Component {
   constructor(props) {
     super(props);
@@ -53,6 +55,7 @@ class Tabs extends Component {
                 data={artist}
                 key={artist.id}
                 onArtistMusicsPlay={this.props.onArtistMusicsPlay}
+                onShowSongsOption={this.props.onShowSongsOption}
               ></Artist>
             ))}
           </div>
@@ -68,6 +71,7 @@ class Tabs extends Component {
                 data={album}
                 key={album.id}
                 onAlbumMusicsPlay={this.props.onAlbumMusicsPlay}
+                onShowSongsOption={this.props.onShowSongsOption}
               ></Album>
             ))}
           </div>
@@ -82,7 +86,8 @@ class Tabs extends Component {
               <Song
                 key={song.title}
                 data={song}
-                onSelectSong={this.props.onSelectSong}
+                onSelectSongInSongs={this.props.onSelectSongInSongs}
+                onShowSongsOption={this.props.onShowSongsOption}
               ></Song>
             ))}
           </div>

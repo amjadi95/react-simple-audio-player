@@ -22,6 +22,7 @@ class ProgressBar extends Component {
       currentTime = 0,
       endTime = 0,
       showSeekerTomb = false;
+    let myStyle = {};
     if (this.props.data != null) {
       seekerValueStyle = {
         width: this.props.data.seekerValue
@@ -30,8 +31,11 @@ class ProgressBar extends Component {
       endTime = this.props.data.endTime;
       showSeekerTomb = currentTime / endTime > 0.001 ? true : false;
     }
+    if (this.props.setStyle) {
+      myStyle = this.props.setStyle;
+    }
     return (
-      <div className="audio-length">
+      <div className="audio-length" style={myStyle}>
         <div className="time fx fxdr fjcsb">
           <span className="current-time">
             {this.convertToTime(currentTime)}

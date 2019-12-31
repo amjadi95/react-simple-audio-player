@@ -63,35 +63,105 @@
 .fxww {
   flex-wrap: wrap;
 }
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
+}
 body {
   background-color: rgb(233, 233, 233);
 }
 .main {
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 100%;
 }
 .tab-container {
-  position: relative;
-  height: 74%;
-
+  position: fixed;
+  min-height: 74%;
+  top: 100px;
   width: 100%;
   overflow-x: hidden;
 }
 
 .audio-player {
   width: 100%;
-  height: 15%;
-  position: relative;
-  background-color: #f1f1f17a;
+  height: 16%;
+  position: fixed;
+  bottom: 0%;
+  background-color: #fafafae0;
   padding: 0 10px 10px 10px;
+  transition: 0.6s;
+  border-top: 2px solid #ffc107;
+  box-shadow: 0px 0px 9px 5px #c8c8c8;
 }
 .head {
   width: 100%;
-  height: 11%;
+  min-height: 15%;
+  position: fixed;
+  top: 0px;
+}
+.nowPlaying {
+  width: 100%;
+  height: 100%;
+  z-index: 5003;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 10px 10px 10px;
+}
+.nowplaying-info {
+  position: absolute;
+  width: 100%;
+  margin-top: 35px;
+  transition: 2s;
+  left: 0;
+}
+.cover.fx-cc {
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  position: absolute;
+  left: 0;
+  opacity: 0.2;
 }
 .audio-length {
+  transition: 0.7s;
 }
+.audio-controller {
+  flex-direction: row;
+}
+.control-buttons {
+}
+.control-buttons button {
+  z-index: 1000;
+  transition: 0.6s;
+}
+.repeat {
+  width: 25px !important;
+  height: 25px !important;
+}
+.next-pre {
+  margin: 10px;
+}
+.play-button {
+  z-index: 10000 !important;
+  width: 42px !important;
+  height: 42px !important;
+}
+.show-buttons {
+  margin: 5px;
+}
+.hide-buttons {
+  opacity: 0;
+}
+.play-button.show-buttons {
+  width: 60px !important;
+  height: 60px !important;
+}
+
 .progres-bar-container {
   width: 100%;
   height: 20px;
@@ -100,9 +170,10 @@ body {
 .progres-bar {
   width: 100%;
   height: 30%;
-  background-color: #d7d7d7;
+  background-color: #e9e9e9;
   position: relative;
   border-radius: 5px;
+  box-shadow: 0px 0px 0px 1px #c4c2c2;
 }
 .value {
   background-color: #ffa50085;
@@ -114,13 +185,14 @@ body {
   height: 100%;
 }
 .seeker-tomb {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: #e9a830;
   box-shadow: 0px 0px 1px 1px #c88100;
   position: absolute;
   right: -5px;
   border-radius: 50%;
+  border: 2px solid #ffc107;
 }
 .time {
   padding: 5px 5px 3px 5px;
@@ -135,7 +207,7 @@ body {
 
 .header {
   background-color: #e6ac01;
-  height: 50%;
+  height: 40px;
   padding: 0 10px;
 }
 .header h5 {
@@ -170,7 +242,7 @@ body {
   font-size: 9px;
 }
 .tab-items {
-  height: 50%;
+  height: 60px;
 }
 button.tab-item {
   background-color: #ffc107;
@@ -208,6 +280,7 @@ button.tab-item:focus::after {
 .songs {
   margin: 3px 0;
   padding: 5px 15px;
+  position: relative;
 }
 .songs:hover {
   cursor: pointer;
@@ -220,6 +293,9 @@ button.tab-item:focus::after {
 .song-artist {
   font-size: 12px;
   color: rgb(121, 121, 121);
+}
+.song-name {
+  width: 100%;
 }
 .song-cover {
   background-image: url(http://uupload.ir/files/15ws_cover.jpg);
@@ -319,14 +395,109 @@ button.tab-item:focus::after {
 .albums-tab .artist-album-name {
   height: 50px;
 }
-.artist-album-name span:nth-child(1) {
+.artist-album-name > span:nth-child(1) {
   height: 100%;
 }
-.albums-tab .artist-album-name span:nth-child(2) {
+.albums-tab .artist-album-name > div > span:nth-child(2) {
   font-size: 12px;
   color: rgb(102, 102, 102);
 }
+.close-songs-option {
+  z-index: 10000;
+  background-color: #efefefcc;
+}
+.songs-option {
+  position: fixed;
+  top: 50%;
+  z-index: 10002;
+}
 
+.songs-option-menu {
+  width: 200px;
+  height: 240px;
+  z-index: 99999999;
+  /* background-color: white; */
+  border-radius: 5px;
+  padding: 5px;
+}
+.songs-option-info {
+  color: #424242;
+  font-size: 24px;
+  position: absolute;
+  width: 280px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  /* border: 1px solid #ffc107; */
+  height: 240px;
+}
+
+.songs-option-info > span {
+  margin: 10px;
+  border-bottom: 1px solid #898989;
+  padding: 5px;
+}
+.songs-option-info > span > span:nth-child(2),
+.songs-option-info > span > span:nth-child(2) .badge {
+  font-style: italic;
+  font-weight: 400;
+  margin: 2px;
+}
+.option-item {
+  width: 90%;
+  font-size: 20px;
+  height: 30%;
+  padding: 5px 18px;
+  margin: 10px;
+  box-shadow: 0px 6px 5px 4px #c8c8c8;
+}
+
+.dot-option-container {
+  width: 40px;
+  height: 100%;
+  right: 0;
+}
+.dot-option-container:hover {
+  background-color: #dedddd;
+}
+.dot-option {
+  width: 15px;
+  height: 30px;
+}
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #9e9e9e;
+  margin: 2px;
+}
+.show-nowplaying {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  height: 0;
+  width: 100%;
+  z-index: 5005;
+}
+.show-nowplaying > div {
+  cursor: pointer;
+}
+
+.show-nowplayin-thumb-up {
+  background-color: #fafafaf0;
+  border: 1px solid #ffc107;
+  border-bottom: unset;
+  width: 20%;
+  height: 25px;
+  border-radius: 20px 20px 0px 0px;
+  padding-bottom: 3px;
+  transition: 0.2s;
+  font-size: 10px;
+}
+.show-nowplayin-thumb-down {
+  background-color: #ffc107 !important;
+  border-radius: 0px 0px 20px 20px !important;
+}
 @media (min-width: 1024px) {
   .artist-album-cover {
     height: 160px;
@@ -375,5 +546,15 @@ button.tab-item:focus::after {
 @media (max-width: 320px) {
   .artist-album {
     width: 140px;
+  }
+  .songs-option-info {
+    font-size: 18px;
+  }
+  .tab-items {
+    height: 40px;
+    font-size: 14px;
+  }
+  .tab-container {
+    top: 80px;
   }
 }

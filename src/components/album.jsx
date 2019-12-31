@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DotOoption from "./dotOption";
 class Album extends Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,20 @@ class Album extends Component {
             play
           </button>
         </div>
-        <div className="artist-album-name fx faic fxdc">
-          <span className="w-100 h-100">{album.title}</span>
-          <span className="w-100 h-100">{album.artist}</span>
+        <div className="artist-album-name fx faic fxdr">
+          <div className="fx faic fxdc w-100">
+            <span className="w-100 h-100">{album.title}</span>
+            <span className="w-100 h-100">{album.artist}</span>
+          </div>
+          <DotOoption
+            onShowSongsOption={this.props.onShowSongsOption}
+            data={{
+              type: "album",
+              albums: [album.title],
+              artist: album.artist,
+              track: ""
+            }}
+          ></DotOoption>
         </div>
       </div>
     );

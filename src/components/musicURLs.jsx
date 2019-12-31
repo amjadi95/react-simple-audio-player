@@ -89,6 +89,7 @@ export const Artists = [
   {
     id: 1,
     title: "Ebi",
+    albums: ["Shabzade"],
     coverUrl: "http://uupload.ir/files/qhb8_cover.jpg",
     list: [
       {
@@ -117,6 +118,7 @@ export const Artists = [
   {
     id: 2,
     title: "Armik",
+    albums: ["malaga"],
     coverUrl: "http://uupload.ir/files/hjop_cover.jpg",
     list: [
       {
@@ -146,6 +148,7 @@ export const Artists = [
   {
     id: 3,
     title: "Julio Iglasias",
+    albums: ["Mylife", "Romantic", "wish"],
     coverUrl: "http://uupload.ir/files/ivj0_cover.jpg",
     list: [
       {
@@ -174,6 +177,7 @@ export const Artists = [
   {
     id: 4,
     title: "Reamon",
+    albums: ["unknown", "wish"],
     coverUrl: "",
     list: [
       {
