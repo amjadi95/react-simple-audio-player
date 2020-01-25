@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## no redux - no routin - just basic
+## no redux - no routing - just basic
 
 ## Available Scripts
 
