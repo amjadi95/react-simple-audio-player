@@ -9,6 +9,7 @@ class Header extends Component {
   componentDidMount() {}
 
   render() {
+    let selectedTab = this.props.selectedTab;
     return (
       <div className="head">
         <div className=" header fx fxdr fjcsb faic">
@@ -18,16 +19,40 @@ class Header extends Component {
           <SearchBox></SearchBox>
         </div>
         <div className="tab-items fx-cc fxdr ">
-          <button className="tab-item fx-cc" onClick={this.props.onSelectTab}>
+          <button
+            className={
+              "tab-item fx-cc " +
+              (selectedTab == "PLAYLISTS" ? " tab-item-selected" : "")
+            }
+            onClick={this.props.onSelectTab}
+          >
             PLAYLISTS
           </button>
-          <button className="tab-item fx-cc" onClick={this.props.onSelectTab}>
+          <button
+            className={
+              "tab-item fx-cc " +
+              (selectedTab == "ARTISTS" ? " tab-item-selected" : "")
+            }
+            onClick={this.props.onSelectTab}
+          >
             ARTISTS
           </button>
-          <button className="tab-item fx-cc" onClick={this.props.onSelectTab}>
+          <button
+            className={
+              "tab-item fx-cc " +
+              (selectedTab == "ALBUMS" ? " tab-item-selected" : "")
+            }
+            onClick={this.props.onSelectTab}
+          >
             ALBUMS
           </button>
-          <button className="tab-item fx-cc" onClick={this.props.onSelectTab}>
+          <button
+            className={
+              "tab-item fx-cc " +
+              (selectedTab == "SONGS" ? " tab-item-selected" : "")
+            }
+            onClick={this.props.onSelectTab}
+          >
             SONGS
           </button>
         </div>

@@ -10,7 +10,10 @@ class Artists extends Component {
     let artist = this.props.data;
     return (
       <div className="artist-album fx fxdc faic">
-        <div className="artist-album-cover fx-cc">
+        <div
+          className="artist-album-cover fx-cc"
+          onClick={() => this.props.onShowSelectedGroup("artist", artist.title)}
+        >
           {artist.coverUrl != "" && (
             <img src={artist.coverUrl} alt="" width="100%" height="" />
           )}
@@ -24,7 +27,14 @@ class Artists extends Component {
           </button>
         </div>
         <div className="artist-album-name fx faic">
-          <span className="w-100 h-100">{artist.title}</span>
+          <span
+            className="w-100 h-100"
+            onClick={() =>
+              this.props.onShowSelectedGroup("artist", artist.title)
+            }
+          >
+            {artist.title}
+          </span>
           <DotOoption
             onShowSongsOption={this.props.onShowSongsOption}
             data={{

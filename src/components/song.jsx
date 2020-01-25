@@ -12,7 +12,7 @@ class Song extends Component {
         <div
           className="w-100 h-100 fx fxdr"
           onClick={() => {
-            this.props.onSelectSongInSongs(song.title);
+            this.props.onSelectSong(song.title);
           }}
         >
           <div className="song-cover fx-cc ">

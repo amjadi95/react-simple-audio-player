@@ -9,7 +9,10 @@ class Album extends Component {
     let album = this.props.data;
     return (
       <div className="artist-album fx fxdc faic">
-        <div className="artist-album-cover fx-cc">
+        <div
+          className="artist-album-cover fx-cc"
+          onClick={() => this.props.onShowSelectedGroup("album", album.title)}
+        >
           {album.coverUrl != "" && (
             <img src={album.coverUrl} alt="" width="100%" height="" />
           )}
@@ -23,7 +26,10 @@ class Album extends Component {
           </button>
         </div>
         <div className="artist-album-name fx faic fxdr">
-          <div className="fx faic fxdc w-100">
+          <div
+            className="fx faic fxdc w-100"
+            onClick={() => this.props.onShowSelectedGroup("album", album.title)}
+          >
             <span className="w-100 h-100">{album.title}</span>
             <span className="w-100 h-100">{album.artist}</span>
           </div>

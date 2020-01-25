@@ -40,23 +40,26 @@ class AudioPlayer extends Component {
     return (
       <div
         className={"audio-player " + mystyle}
-        style={showNowPlaying ? { height: 460 } : {}}
+        style={showNowPlaying ? { height: "75%" } : {}}
       >
         <div
           className="show-nowplaying fx fjcc"
           style={showNowPlaying ? { top: 0 } : {}}
+          onClick={() => this.onShowNowPlaying(!showNowPlaying)}
         >
           <div
             className={
               "show-nowplayin-thumb-up fx fjcc" +
               (showNowPlaying ? " show-nowplayin-thumb-down" : "")
             }
-            onClick={() => this.onShowNowPlaying(!showNowPlaying)}
           >
             {showNowPlaying ? "down" : "up"}
           </div>
         </div>
-        <div className="cover fx-cc">
+        <div
+          className="cover fx-cc"
+          style={showNowPlaying ? {} : { opacity: 0 }}
+        >
           <img src={coverUrl} alt="" width="" height="100%" />
         </div>
         <div

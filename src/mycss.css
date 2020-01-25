@@ -9,11 +9,11 @@
 }
 
 .fxdc {
-  flex-direction: column;
+  flex-direction: column !important;
 }
 
 .fxdr {
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 .fxdr-s {
@@ -119,13 +119,13 @@ body {
   transition: 2s;
   left: 0;
 }
-.cover.fx-cc {
-  height: 100%;
+.cover {
+  height: 43%;
   width: 100%;
   z-index: 5000;
   position: absolute;
+  bottom: 5%;
   left: 0;
-  opacity: 0.2;
 }
 .audio-length {
   transition: 0.7s;
@@ -260,7 +260,10 @@ button.tab-item:hover {
 button.tab-item:focus {
   outline: unset;
 }
-button.tab-item:focus::after {
+.tab-item-selected {
+  background-color: #e6af01 !important;
+}
+button.tab-item.tab-item-selected::after {
   outline: unset;
   content: "";
   position: absolute;
@@ -329,6 +332,8 @@ button.tab-item:focus::after {
   padding: 0px 5px;
   overflow-y: scroll;
   background-color: #efefef;
+  padding-bottom: 50px;
+  position: relative;
 }
 .tab-contetnt-wrapper {
   height: fit-content;
@@ -475,9 +480,10 @@ button.tab-item:focus::after {
   position: absolute;
   top: -25px;
   left: 0;
-  height: 0;
+  height: 25px;
   width: 100%;
   z-index: 5005;
+  transition: 1s;
 }
 .show-nowplaying > div {
   cursor: pointer;
@@ -487,17 +493,91 @@ button.tab-item:focus::after {
   background-color: #fafafaf0;
   border: 1px solid #ffc107;
   border-bottom: unset;
-  width: 20%;
+  width: 75%;
   height: 25px;
   border-radius: 20px 20px 0px 0px;
   padding-bottom: 3px;
-  transition: 0.2s;
+  transition: 1s;
   font-size: 10px;
 }
 .show-nowplayin-thumb-down {
   background-color: #ffc107 !important;
   border-radius: 0px 0px 20px 20px !important;
 }
+
+.selected-list {
+  min-height: 300px;
+  background-color: #fffff5;
+  width: 100%;
+  position: relative;
+}
+.back-button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffffcc;
+  z-index: 999;
+  border-radius: 50%;
+  font-size: 12px;
+  left: 10px;
+  border: 1px solid #b8b8b8;
+  cursor: pointer;
+}
+.back-button:hover {
+  box-shadow: 0px 0px 3px 3px #bebebe;
+  transition: 0.3s;
+}
+.selected-list .artist-album-cover {
+  height: 300px;
+}
+.album-artist-info {
+  border-bottom: 4px solid #ffc107;
+  font-size: 20px;
+}
+
+.close-addnewplaylist {
+  background-color: rgba(128, 128, 128, 0.404);
+  z-index: 20002;
+}
+.addnewplaylist-form {
+  z-index: 20002;
+}
+.list-ofplaylists > div {
+  cursor: pointer;
+}
+.list-ofplaylists > div:hover {
+  background-color: rgb(224, 224, 224);
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (min-width: 1024px) {
   .artist-album-cover {
     height: 160px;
@@ -524,6 +604,13 @@ button.tab-item:focus::after {
   }
   .albums-tab .artist-album {
     height: 120px !important;
+  }
+  .show-nowplayin-thumb-up {
+    height: 20px;
+  }
+  .show-nowplaying {
+    top: -20px;
+    height: 20px;
   }
 }
 

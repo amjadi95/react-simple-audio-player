@@ -78,7 +78,10 @@ class SongsOption extends Component {
             >
               Add Queue
             </button>
-            <button className="option-item fx-cc btn btn-warning">
+            <button
+              className="option-item fx-cc btn btn-warning"
+              onClick={() => this.props.onShowAddToPlayList(data)}
+            >
               Add to PlayList
             </button>
           </div>
